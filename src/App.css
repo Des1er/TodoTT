@@ -1,38 +1,160 @@
-.App {
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #f5f5f5;
+  color: #4d4d4d;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 500px;
+  position: relative;
+  margin: 50px auto;
+  padding: 5px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 100px;
+  color: rgba(175, 47, 47, 0.2);
+  font-weight: 100;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-container {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  padding: 15px;
+  border-bottom: 1px solid #ededed;
+}
+
+.input {
+  flex: 1; 
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #d9d9d9;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures spacing between items */
+  padding: 15px;
+  font-size: 14px;
+  color: #777;
+  flex-wrap: wrap; /* Prevents breaking into multiple lines */
+  gap: 10px; /* Adds spacing */
+}
+.counter {
+  white-space: nowrap; /* Prevents the text from breaking */
+}
+
+.button {
+  border: none;
+  padding: 5px 10px;
+  
+  display: inline;
+  cursor: pointer;
+  background: white;
+}
+
+.button.active {
+  border: 1px solid #d9d9d9;
+  border-color: rgba(175, 47, 47, 0.2);
+  border-radius: 3px;
+  color: rgba(175, 47, 47, 0.5);
+}
+.add-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: rgba(175, 47, 47, 0.8);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: rgba(175, 47, 47, 1);
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between checkbox and text */
+  padding: 10px;
+  border-bottom: 1px solid #ededed;
+  max-width: 100%; /* Prevents overflow */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+.todo-text {
+  flex: 1;
+  font-size: 18px;
+  color: #4d4d4d;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-word; 
+  overflow: hidden; 
+}
+p.todo-text {
+  margin: 0;
+  text-align: left;
+}
+
+
+.checkbox-container input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.checkbox-custom {
+  margin: 15px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: all 0.3s ease;
+}
+
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom {
+  border-color: #4CAF50;
+  background-color: #4CAF50;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom::after {
+  content: "✔";
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 14px;
+  font-weight: bold;
 }
